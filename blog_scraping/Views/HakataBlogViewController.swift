@@ -39,7 +39,7 @@ class HakataBlogViewController: UIViewController {
             guard let self = self else {return}
             
             if let html = response.value {
-                print(html)
+//                print(html)
                 if let doc = try? HTML(html: html, encoding: .utf8){
                     var error = [String]()
                     for e in doc.xpath("//h1"){
@@ -57,11 +57,17 @@ class HakataBlogViewController: UIViewController {
                         dates.append(date.text ?? "")
                     }
                     //
+                    var blogUrls = [String]()
+                                        for blogUrl in doc.xpath("//h3[@class='p-blog-title']/a/@href"){
+                    //                        print(blogUrl.text ?? "")
+                                            blogUrls.append(blogUrl.text ?? "")
+                                        }
                     
                     for (index, value) in titles.enumerated(){
-                        let article = Article()
+                        var article = Article()
                         article.title = value
                         article.date = dates[index]
+                        article.blogURL = blogUrls[index]
                         self.blogs.append(article)
                     }
                     
@@ -95,5 +101,8 @@ extension HakataBlogViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc = storyboard?.instantiateViewController(identifier: "BlogDetailVC") as! BlogDetailViewController
+        vc.blog = blogs[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

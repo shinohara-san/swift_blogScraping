@@ -8,9 +8,11 @@
 
 import Foundation
 
-class Article {
+struct Article: Equatable {
+    
     var title = ""
     var date = ""
     var blogURL = ""
     var imageURL = ""
+    var body = ""
 }
