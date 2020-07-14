@@ -1,8 +1,8 @@
 //
-//  TenjinBlogViewController.swift
+//  HakataBlogViewController.swift
 //  blog_scraping
 //
-//  Created by Yuki Shinohara on 2020/07/11.
+//  Created by Yuki Shinohara on 2020/07/14.
 //  Copyright © 2020 Yuki Shinohara. All rights reserved.
 //
 
@@ -10,14 +10,16 @@ import UIKit
 import Alamofire
 import Kanna
 
-class TenjinBlogViewController: UIViewController {
+class HakataBlogViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     private var blogs = [Article]()
-    var id = 4024
+    var id = 4021
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +48,7 @@ class TenjinBlogViewController: UIViewController {
                     
                     var titles = [String]()
                     for title in doc.xpath("//h3[@class='p-blog-title']/a"){
-//                        print(title.text ?? "")
+                        //                        print(title.text ?? "")
                         titles.append(title.text ?? "")
                     }
                     
@@ -55,13 +57,13 @@ class TenjinBlogViewController: UIViewController {
                         dates.append(date.text ?? "")
                     }
                     //
-                   
-                        for (index, value) in titles.enumerated(){
-                            let article = Article()
-                            article.title = value
-                            article.date = dates[index]
-                            self.blogs.append(article)
-                        }
+                    
+                    for (index, value) in titles.enumerated(){
+                        let article = Article()
+                        article.title = value
+                        article.date = dates[index]
+                        self.blogs.append(article)
+                    }
                     
                     
                     DispatchQueue.main.async {[weak self] in
@@ -71,19 +73,19 @@ class TenjinBlogViewController: UIViewController {
                 }
             }
             
-        } 
+        }
     }
+    
+    
 }
 
-
-
-extension TenjinBlogViewController: UITableViewDelegate, UITableViewDataSource{
+extension HakataBlogViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return blogs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tenjinCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "hakataCell", for: indexPath)
         let blog = blogs[indexPath.row]
         cell.textLabel?.text = blog.title
         cell.detailTextLabel?.text = blog.date
