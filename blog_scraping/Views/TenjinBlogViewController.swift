@@ -12,23 +12,23 @@ class TenjinBlogViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     var blogs = [Article]()
-    var id = 4024
+//    var id = 4024
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "天神校"
+//        self.navigationItem.title = "天神校"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Common.getData(id: id, vc: self)
+        Common.getData(id: TabBarViewController.id, vc: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         blogs = [Article]()
     }
-    
+
 }
 
 
@@ -39,10 +39,13 @@ extension TenjinBlogViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tenjinCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let blog = blogs[indexPath.row]
-        cell.textLabel?.text = blog.title
-        cell.detailTextLabel?.text = blog.date
+        
+        DispatchQueue.main.async {
+            cell.textLabel?.text = blog.title
+            cell.detailTextLabel?.text = blog.date
+        }
         
         return cell
     }

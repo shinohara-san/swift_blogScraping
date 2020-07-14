@@ -13,7 +13,7 @@ import Kanna
 class HakataBlogViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
-    private var blogs = [Article]()
+    var blogs = [Article]()
     var id = 4021
     
     override func viewDidLoad() {

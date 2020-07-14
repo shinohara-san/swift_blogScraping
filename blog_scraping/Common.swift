@@ -12,10 +12,9 @@ import Kanna
 
 class Common {
     class func getData(id: Int, vc: TenjinBlogViewController){
+                
         let url = "https://www.aeonet.co.jp/school/kyushu/fukuoka/\(id)/blog/"
         AF.request(url).responseString { (response) in
-            
-//            guard let self = self else {return}
             
             if let html = response.value {
                 //                print(html)
@@ -50,14 +49,11 @@ class Common {
                         vc.blogs.append(article)
                     }
                     
-                    
                     DispatchQueue.main.async {
                         vc.table.reloadData()
                     }
-                    
                 }
             }
-            
         }
     }
 }

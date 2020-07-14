@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hakata Blog View Controller-->
+        <!--Tenjin Blog View Controller-->
         <scene sceneID="zDI-kd-0wk">
             <objects>
-                <viewController id="niV-S6-Omb" customClass="HakataBlogViewController" customModule="blog_scraping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="niV-S6-Omb" customClass="TenjinBlogViewController" customModule="blog_scraping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hxS-QI-elP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hakataCell" textLabel="NeY-H6-QOe" detailTextLabel="9c4-fC-ajO" style="IBUITableViewCellStyleSubtitle" id="o8B-CQ-GCI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="NeY-H6-QOe" detailTextLabel="9c4-fC-ajO" style="IBUITableViewCellStyleSubtitle" id="o8B-CQ-GCI">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o8B-CQ-GCI" id="0fb-C1-x6X">
@@ -61,17 +61,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="GVv-8C-Mpb"/>
                     <connections>
-                        <outlet property="table" destination="anx-YZ-1hp" id="YKZ-MU-Blz"/>
+                        <outlet property="table" destination="anx-YZ-1hp" id="Lu8-f4-fpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvx-6O-sdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900.0000000000002" y="869.86607142857144"/>
         </scene>
-        <!--Meinohama Blog View Controller-->
+        <!--Tenjin Blog View Controller-->
         <scene sceneID="sPl-oz-NK4">
             <objects>
-                <viewController id="HQn-WL-0hp" customClass="MeinohamaBlogViewController" customModule="blog_scraping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HQn-WL-0hp" customClass="TenjinBlogViewController" customModule="blog_scraping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bSm-bP-fPf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="meinohamaCell" textLabel="R6C-Va-z5B" detailTextLabel="0Ha-pT-XdB" style="IBUITableViewCellStyleSubtitle" id="D8f-83-3Bw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="R6C-Va-z5B" detailTextLabel="0Ha-pT-XdB" style="IBUITableViewCellStyleSubtitle" id="D8f-83-3Bw">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D8f-83-3Bw" id="JoD-3W-2Tb">
@@ -122,7 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2kG-Iv-ifj"/>
                     <connections>
-                        <outlet property="table" destination="QeL-mS-bzv" id="sxI-2J-Mfm"/>
+                        <outlet property="table" destination="QeL-mS-bzv" id="c21-jX-4b0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3u3-XK-eg8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tenjinCell" textLabel="ba2-j0-P9S" detailTextLabel="6Yr-vk-rQ4" style="IBUITableViewCellStyleSubtitle" id="jZN-d7-t2f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ba2-j0-P9S" detailTextLabel="6Yr-vk-rQ4" style="IBUITableViewCellStyleSubtitle" id="jZN-d7-t2f">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jZN-d7-t2f" id="uX2-ry-e49">
@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="3225" y="870"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="ZXU-xd-Vqj">
             <objects>
-                <tabBarController id="4c6-qN-OQX" sceneMemberID="viewController">
+                <tabBarController id="4c6-qN-OQX" customClass="TabBarViewController" customModule="blog_scraping" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="nBQ-DI-jid">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -318,7 +318,7 @@
         <scene sceneID="fhY-IH-HbQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vUd-rT-ENS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="博多" image="h.circle" catalog="system" selectedImage="h.circle" id="PcO-1x-s0u"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="博多" image="h.circle" catalog="system" selectedImage="h.circle" id="PcO-1x-s0u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZeZ-g8-Ffd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -337,7 +337,7 @@
         <scene sceneID="tbs-Ic-L0o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lzP-IW-BSX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="姪浜" image="m.circle" catalog="system" selectedImage="m.circle" id="Eof-Aq-aba"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="姪浜" image="m.circle" catalog="system" selectedImage="m.circle" id="Eof-Aq-aba"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qs4-93-zH1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
