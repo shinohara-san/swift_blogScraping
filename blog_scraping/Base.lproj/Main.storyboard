@@ -204,7 +204,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a4Y-A1-R6X">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1120"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxi-lW-k6n">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxi-lW-k6n">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Swl-8A-a4w"/>
@@ -213,7 +213,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPi-WU-OeR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPi-WU-OeR">
                                                 <rect key="frame" x="0.0" y="40" width="414" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="YM6-p2-hcD"/>
@@ -228,7 +228,7 @@
                                                     <constraint firstAttribute="height" constant="240" id="aYC-wx-98x"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52E-Zp-7hB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52E-Zp-7hB">
                                                 <rect key="frame" x="0.0" y="320" width="414" height="800"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="800" id="f9m-uy-5rP"/>
@@ -269,16 +269,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st0-te-cbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2869.5652173913045" y="486.83035714285711"/>
+            <point key="canvasLocation" x="3225" y="870"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZXU-xd-Vqj">
             <objects>
                 <tabBarController id="4c6-qN-OQX" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nBQ-DI-jid">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="nBQ-DI-jid">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="acl-aX-Vai" kind="relationship" relationship="viewControllers" id="FYD-T9-1JU"/>
@@ -288,13 +291,15 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBA-yU-Gci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151" y="685"/>
+            <point key="canvasLocation" x="-258" y="870"/>
         </scene>
         <!--天神-->
         <scene sceneID="bC8-he-Aq8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acl-aX-Vai" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="天神" image="t.circle" catalog="system" selectedImage="t.circle" id="8z5-0w-ebK"/>
+                    <tabBarItem key="tabBarItem" title="天神" image="t.circle" catalog="system" selectedImage="t.circle" id="8z5-0w-ebK">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tl3-qr-o96">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -313,7 +318,7 @@
         <scene sceneID="fhY-IH-HbQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vUd-rT-ENS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="博多" image="h.circle" selectedImage="h.circle" catalog="system" id="PcO-1x-s0u"/>
+                    <tabBarItem key="tabBarItem" title="博多" image="h.circle" catalog="system" selectedImage="h.circle" id="PcO-1x-s0u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZeZ-g8-Ffd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -332,7 +337,7 @@
         <scene sceneID="tbs-Ic-L0o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lzP-IW-BSX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="姪浜" image="m.circle" selectedImage="m.circle" catalog="system" id="Eof-Aq-aba"/>
+                    <tabBarItem key="tabBarItem" title="姪浜" image="m.circle" catalog="system" selectedImage="m.circle" id="Eof-Aq-aba"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qs4-93-zH1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -350,8 +355,6 @@
     </scenes>
     <resources>
         <image name="h.circle" catalog="system" width="128" height="121"/>
-        <image name="h.circle" width="128" height="128"/>
-        <image name="m.circle" width="128" height="128"/>
         <image name="m.circle" catalog="system" width="128" height="121"/>
         <image name="t.circle" catalog="system" width="128" height="121"/>
     </resources>

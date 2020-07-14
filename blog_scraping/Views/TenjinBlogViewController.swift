@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import Alamofire
-import Kanna
 
 class TenjinBlogViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
-    private var blogs = [Article]()
+    var blogs = [Article]()
     var id = 4024
     
     override func viewDidLoad() {
@@ -23,7 +21,7 @@ class TenjinBlogViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData(id: id)
+        Common.getData(id: id, vc: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,56 +29,6 @@ class TenjinBlogViewController: UIViewController {
         blogs = [Article]()
     }
     
-    func getData(id: Int){
-        let url = "https://www.aeonet.co.jp/school/kyushu/fukuoka/\(id)/blog/"
-        AF.request(url).responseString { [weak self](response) in
-            
-            guard let self = self else {return}
-            
-            if let html = response.value {
-//                print(html)
-                if let doc = try? HTML(html: html, encoding: .utf8){
-                    var error = [String]()
-                    for e in doc.xpath("//h1"){
-                        error.append(e.text ?? "")
-                    }
-                    
-                    var titles = [String]()
-                    for title in doc.xpath("//h3[@class='p-blog-title']/a"){
-//                        print(title.text ?? "")
-                        titles.append(title.text ?? "")
-                    }
-                    
-                    var dates = [String]()
-                    for date in doc.xpath("//p[@class='p-blog-date']"){
-                        dates.append(date.text ?? "")
-                    }
-                    
-                    var blogUrls = [String]()
-                    for blogUrl in doc.xpath("//h3[@class='p-blog-title']/a/@href"){
-//                        print(blogUrl.text ?? "")
-                        blogUrls.append(blogUrl.text ?? "")
-                    }
-                    
-                   
-                        for (index, value) in titles.enumerated(){
-                            var article = Article()
-                            article.title = value
-                            article.date = dates[index]
-                            article.blogURL = blogUrls[index]
-                            self.blogs.append(article)
-                        }
-                    
-                    
-                    DispatchQueue.main.async {[weak self] in
-                        self?.table.reloadData()
-                    }
-                    
-                }
-            }
-            
-        } 
-    }
 }
 
 

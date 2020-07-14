@@ -17,6 +17,7 @@
 		958687BC24BD2DDF00D9812C /* HakataBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958687BB24BD2DDF00D9812C /* HakataBlogViewController.swift */; };
 		958687BE24BD2F8C00D9812C /* MeinohamaBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958687BD24BD2F8C00D9812C /* MeinohamaBlogViewController.swift */; };
 		958687C024BD309F00D9812C /* BlogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958687BF24BD309F00D9812C /* BlogDetailViewController.swift */; };
+		9586B4D124BDACB700191BF2 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586B4D024BDACB700191BF2 /* Common.swift */; };
 		F381DD4781A5C942F043A5A3 /* Pods_blog_scraping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F895C013769277EBC79068D3 /* Pods_blog_scraping.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		958687BB24BD2DDF00D9812C /* HakataBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HakataBlogViewController.swift; sourceTree = "<group>"; };
 		958687BD24BD2F8C00D9812C /* MeinohamaBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeinohamaBlogViewController.swift; sourceTree = "<group>"; };
 		958687BF24BD309F00D9812C /* BlogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewController.swift; sourceTree = "<group>"; };
+		9586B4D024BDACB700191BF2 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F895C013769277EBC79068D3 /* Pods_blog_scraping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blog_scraping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 			children = (
 				954C7A3524B9425400879EFA /* Views */,
 				954C7A3324B93E6500879EFA /* Blog.swift */,
+				9586B4D024BDACB700191BF2 /* Common.swift */,
 				954C7A1F24B93D3300879EFA /* AppDelegate.swift */,
 				954C7A2124B93D3300879EFA /* SceneDelegate.swift */,
 				954C7A2524B93D3300879EFA /* Main.storyboard */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9586B4D124BDACB700191BF2 /* Common.swift in Sources */,
 				958687BC24BD2DDF00D9812C /* HakataBlogViewController.swift in Sources */,
 				954C7A3724B9426900879EFA /* TenjinBlogViewController.swift in Sources */,
 				954C7A3424B93E6500879EFA /* Blog.swift in Sources */,
