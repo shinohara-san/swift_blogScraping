@@ -16,11 +16,18 @@ class TenjinBlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.title = "天神校"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        switch TabBarViewController.id {
+        case 4024:
+            self.navigationItem.title = "天神校"
+        case 4021:
+            self.navigationItem.title = "博多校"
+        default:
+            self.navigationItem.title = "姪浜校"
+        }
         Common.getData(id: TabBarViewController.id, vc: self)
     }
     
