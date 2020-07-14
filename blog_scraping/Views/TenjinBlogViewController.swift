@@ -18,6 +18,7 @@ class TenjinBlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "天神校"
     }
     
     override func viewWillAppear(_ animated: Bool) {

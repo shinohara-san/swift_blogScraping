@@ -26,20 +26,19 @@ class BlogDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        titleLabel.text = blog.title
-        dateLabel.text = blog.date
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.titleLabel.text = self?.blog.title
+            self?.dateLabel.text = self?.blog.date
+        }
+
         DispatchQueue.global().async {
             self.getData()
         }
         
         wait( { return self.blogs == [Article]() } ) {
-            // 取得しました
-            //            print("finish")
-            DispatchQueue.main.async {
-                self.imageView.image = UIImage(url: self.blogs[0].imageURL)
-                self.bodyLabel.text = self.blogs[0].body
+            DispatchQueue.main.async { [weak self] in
+                self?.imageView.image = UIImage(url: (self?.blogs[0].imageURL)!)
+                self?.bodyLabel.text = self?.blogs[0].body
             }
         }
         

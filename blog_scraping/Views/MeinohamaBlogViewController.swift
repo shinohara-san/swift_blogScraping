@@ -18,7 +18,7 @@ class MeinohamaBlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "姪浜校"
         // Do any additional setup after loading the view.
     }
     
@@ -39,7 +39,7 @@ class MeinohamaBlogViewController: UIViewController {
             guard let self = self else {return}
             
             if let html = response.value {
-//                print(html)
+                //                print(html)
                 if let doc = try? HTML(html: html, encoding: .utf8){
                     var error = [String]()
                     for e in doc.xpath("//h1"){
@@ -58,10 +58,10 @@ class MeinohamaBlogViewController: UIViewController {
                     }
                     //
                     var blogUrls = [String]()
-                                        for blogUrl in doc.xpath("//h3[@class='p-blog-title']/a/@href"){
-                    //                        print(blogUrl.text ?? "")
-                                            blogUrls.append(blogUrl.text ?? "")
-                                        }
+                    for blogUrl in doc.xpath("//h3[@class='p-blog-title']/a/@href"){
+                        //                        print(blogUrl.text ?? "")
+                        blogUrls.append(blogUrl.text ?? "")
+                    }
                     
                     for (index, value) in titles.enumerated(){
                         var article = Article()
