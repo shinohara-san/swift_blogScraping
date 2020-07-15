@@ -4,7 +4,7 @@
 //
 //  Created by Yuki Shinohara on 2020/07/14.
 //  Copyright © 2020 Yuki Shinohara. All rights reserved.
-//
+//  ローディングアニメーション https://qiita.com/Simmon/items/c47fc15829064747e6e3
 
 import UIKit
 import Alamofire
@@ -14,6 +14,7 @@ class BlogDetailViewController: UIViewController {
     
     var blog: Article!
     var blogs = [Article]()
+    var ActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -22,15 +23,29 @@ class BlogDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // ActivityIndicatorを作成＆中央に配置
+        ActivityIndicator = UIActivityIndicatorView()
+        ActivityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        ActivityIndicator.center = self.view.center
+        
+        // クルクルをストップした時に非表示する
+        ActivityIndicator.hidesWhenStopped = true
+        
+        // 色を設定
+        ActivityIndicator.style = .medium
+        
+        //Viewに追加
+        self.view.addSubview(ActivityIndicator)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        ActivityIndicator.startAnimating()
         DispatchQueue.main.async { [weak self] in
             self?.titleLabel.text = self?.blog.title
             self?.dateLabel.text = self?.blog.date
         }
-
+        
         DispatchQueue.global().async {
             self.getData()
         }
@@ -39,6 +54,7 @@ class BlogDetailViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.imageView.image = UIImage(url: (self?.blogs[0].imageURL)!)
                 self?.bodyLabel.text = self?.blogs[0].body
+                self?.ActivityIndicator.stopAnimating()
             }
         }
         
@@ -86,7 +102,7 @@ class BlogDetailViewController: UIViewController {
         }
     }
     
-   func wait(_ waitContinuation: @escaping (()->Bool), compleation: @escaping (()->Void)) {
+    func wait(_ waitContinuation: @escaping (()->Bool), compleation: @escaping (()->Void)) {
         var wait = waitContinuation()
         // 0.01秒周期で待機条件をクリアするまで待ちます。
         let semaphore = DispatchSemaphore(value: 0)
@@ -122,3 +138,4 @@ extension UIImage {
         self.init()
     }
 }
+
