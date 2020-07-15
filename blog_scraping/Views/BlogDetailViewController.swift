@@ -102,7 +102,7 @@ class BlogDetailViewController: UIViewController {
         }
     }
     
-    func wait(_ waitContinuation: @escaping (()->Bool), compleation: @escaping (()->Void)) {
+    func wait(_ waitContinuation: @escaping (()->Bool), completion: @escaping (()->Void)) {
         var wait = waitContinuation()
         // 0.01秒周期で待機条件をクリアするまで待ちます。
         let semaphore = DispatchSemaphore(value: 0)
@@ -117,7 +117,7 @@ class BlogDetailViewController: UIViewController {
             }
             // 待機条件をクリアしたので通過後の処理を行います。
             DispatchQueue.main.async {
-                compleation()
+                completion()
             }
         }
     }
