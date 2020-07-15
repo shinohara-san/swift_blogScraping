@@ -12,7 +12,14 @@ import Kanna
 
 class Common {
     class func getData(id: Int, vc: TenjinBlogViewController){
-                
+        vc.blogs.removeAll()
+        
+        if vc.table.refreshControl?.isRefreshing == true{
+            print("refreshing data")
+        } else {
+            print("fetching data")
+        }
+        
         let url = "https://www.aeonet.co.jp/school/kyushu/fukuoka/\(id)/blog/"
         AF.request(url).responseString { (response) in
             
@@ -50,6 +57,7 @@ class Common {
                     }
                     
                     DispatchQueue.main.async {
+                        vc.table.refreshControl?.endRefreshing()
                         vc.table.reloadData()
                     }
                 }

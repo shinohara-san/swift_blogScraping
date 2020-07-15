@@ -4,7 +4,7 @@
 //
 //  Created by Yuki Shinohara on 2020/07/11.
 //  Copyright © 2020 Yuki Shinohara. All rights reserved.
-//
+//  Refresh https://www.youtube.com/watch?v=8Q5Utz68P8g
 
 import UIKit
 
@@ -16,6 +16,15 @@ class TenjinBlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.refreshControl = UIRefreshControl()
+        table.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    }
+    
+    @objc func didPullToRefresh(){
+//        DispatchQueue.main.async {
+//            self.table.refreshControl?.endRefreshing()
+//        }
+         Common.getData(id: TabBarViewController.id, vc: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
